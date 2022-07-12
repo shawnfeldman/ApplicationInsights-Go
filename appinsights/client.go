@@ -3,7 +3,7 @@ package appinsights
 import (
 	"time"
 
-	"github.com/microsoft/ApplicationInsights-Go/appinsights/contracts"
+	"github.com/shawnfeldman/ApplicationInsights-Go/appinsights/contracts"
 )
 
 // Application Insights telemetry client provides interface to track telemetry
