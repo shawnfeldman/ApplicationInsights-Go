@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sort"
+	"strconv"
 	"time"
 )
 
@@ -81,6 +82,7 @@ func (transmitter *httpTransmitter) Transmit(payload []byte, items telemetryBuff
 	req.Header.Set("Content-Encoding", "gzip")
 	req.Header.Set("Content-Type", "application/x-json-stream")
 	req.Header.Set("Accept-Encoding", "gzip, deflate")
+	req.Header.Set("X-GitHub-AI-Item-Count", strconv.Itoa(len(items)))
 
 	resp, err := transmitter.client.Do(req)
 	if err != nil {
